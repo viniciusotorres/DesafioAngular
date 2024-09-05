@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {ThemeModeService} from "../../services/theme-mode/theme-mode.service";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
@@ -15,6 +16,7 @@ import {ThemeModeService} from "../../services/theme-mode/theme-mode.service";
  */
 
 export class NavBarComponent implements OnInit {
+  isDarkMode: boolean = false;
 
   /**
    * @constructor
@@ -35,6 +37,7 @@ export class NavBarComponent implements OnInit {
    * Aplica o tema da aplicação.
    */
   ngOnInit(): void {
+    this.isDarkMode = this.themeModeService.isDark();
     this.themeModeService.applyMode()
   }
 
@@ -45,8 +48,7 @@ export class NavBarComponent implements OnInit {
    */
   changeTheme() {
     this.themeModeService.toggleMode();
-    this.themeModeService.applyMode()
+    this.isDarkMode = this.themeModeService.isDark();
   }
-
 
 }

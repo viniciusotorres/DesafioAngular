@@ -10,8 +10,8 @@
 
     <!-- BOTÃO DO DARK MODE -->
     <div class="form-check form-switch d-flex align-items-center">
-      <i class="bi bi-moon-fill mr-1 cursor-pointer" (click)="changeTheme()"></i>
-      <p class="text subtitle mb-0">Dark Mode</p>
+      <i [ngClass]="isDarkMode ? 'bi bi-sun-fill' : 'bi bi-moon-fill'" class="mr-1 cursor-pointer" (click)="changeTheme()"></i>
+      <p class="text subtitle mb-0">{{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}</p>
     </div>
   </div>
 
