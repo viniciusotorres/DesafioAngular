@@ -1,0 +1,65 @@
+<!-- DIV PAI -->
+<div class="container-fluid">
+
+  <!-- BODY -->
+  <div class="row justify-content-evenly align-items-center">
+
+    <div class="row align-items-center">
+      <div class="col-auto d-flex align-items-center justify-content-start cursor-pointer borderr"
+           (click)="navigateBack()">
+        <i class="bi bi-arrow-left-short"></i>
+        <p class="mb-0 ml-2">Back</p>
+      </div>
+    </div>
+
+    <!-- FLAG -->
+    <div class="col-12 col-md-5 mb-3 mb-md-0 text-center mt-5">
+      <img [src]="flag" alt="flag" class="flag">
+    </div>
+
+    <!-- INFO -->
+    <div class="col-12 col-md-5 d-flex flex-column justify-content-center">
+
+      <!-- NAME -->
+      <div class="mb-3 text-lg-left text-md-left text-left">
+        <h4><b>{{ nameOficial }}</b></h4>
+      </div>
+
+      <!-- INFO -->
+      <div class="row">
+
+        <!-- INFO 1 -->
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <p><b>Native name: </b> <span>{{ name }}</span></p>
+          <p><b>Population: </b> <span>{{ population }}</span></p>
+          <p><b>Region: </b> <span>{{ region }}</span></p>
+          <p><b>Sub Region: </b> <span>{{ subregion }}</span></p>
+          <p><b>Capital: </b><span>{{ capital }}</span></p>
+        </div>
+
+        <!-- INFO 2 -->
+        <div class="col-12 col-md-6">
+          <p><b>Top Level Domain: </b> <span>{{ topLevelDomain }}</span></p>
+          <p><b>Currencies: </b><span>{{ currencies }}</span></p>
+          <p><b>Languages: </b><span>{{ languages }}</span></p>
+        </div>
+      </div>
+
+      <!-- BORDER COUNTRIES -->
+      <div class="col-12 mt-5">
+        <div class="d-flex flex-wrap flex-column flex-md-row">
+          <p class="mt-2"><b>Border Countries: </b></p>
+          <div class="borders d-flex flex-wrap ml-1">
+            @for (border of borders; track $index) {
+              <div class="borderr justify-content-start cursor-pointer text-sm truncate"
+                   (click)="bringingCountry(border.code)">
+                {{ border.name }}
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+</div>
