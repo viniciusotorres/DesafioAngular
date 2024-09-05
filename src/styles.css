@@ -1,1 +1,322 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+/**
+ * Variables
+ */
+:root {
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue-bg: hsl(207, 26%, 17%);
+  --very-dark-blue-text: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-light-gray-bg: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/**
+  * Light mode
+ */
+.light-mode {
+  --bg-color: var(--very-light-gray-bg);
+  --text-color: var(--very-dark-blue-text);
+  --input-color: var(--dark-gray);
+  --element-color: var(--white);
+}
+
+/**
+  * Dark mode
+ */
+.dark-mode {
+  --bg-color: var(--very-dark-blue-bg);
+  --text-color: var(--white);
+  --input-color: var(--dark-blue);
+  --element-color: var(--dark-blue);
+}
+
+/**
+ * Body
+ */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+/**
+ * Navbar
+ */
+nav {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+/**
+ * Navbar shadow on space
+ */
+.navbar {
+  box-shadow:-4px -1px 6px 0px #000000;
+}
+
+/**
+ * Input, select of search and filter
+ */
+.input, select {
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border: 1px solid var(--input-color);
+}
+
+/**
+ * Input
+ */
+input {
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: var(--text-color);
+}
+
+
+
+
+/**
+ * Card of the country
+ */
+.card {
+  background-color: var(--element-color);
+  color: var(--text-color);
+  width: 15rem;
+  height: auto;
+  box-shadow: 3px 2px 11px 1px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Texto
+ */
+.text {
+  color: var(--text-color);
+}
+
+/**
+ * Cursor pointer
+ */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/**
+ * Big title
+ */
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/**
+ * Small title
+ */
+.subtitle {
+  font-size: 0.99rem;
+  font-weight: 400;
+}
+
+/**
+  * Margin right 1 rem
+ */
+.mr-1 {
+  margin-right: 1rem !important;
+}
+
+/**
+  * Margin right 2 rem
+ */
+.mr-4 {
+  margin-right: 4rem !important;
+}
+
+/**
+  * Margin right 5 rem
+ */
+.ml-4 {
+  margin-left: 4rem !important;
+}
+
+/**
+  * Margin left 5 rem
+ */
+.ml-5 {
+  margin-left: 5rem !important;
+}
+
+
+/**
+  * Margin left 8 rem
+ */
+.ml-8 {
+  margin-left: 8rem !important;
+}
+
+/**
+  * Margin left 1 rem
+ */
+.ml-1{
+  margin-left: 1rem !important;
+}
+
+/**
+  * Card image top height 200px and object fit cover
+ */
+.card-img-top {
+  object-fit: cover;
+  height: 200px;
+}
+
+/**
+  * Input class
+ */
+.input {
+  padding: .375rem .75rem;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-clip: padding-box;
+  border-radius: 3px;
+}
+
+/**
+  * Select class
+ */
+.select {
+  padding: .375rem .75rem;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-clip: padding-box;
+  border-radius: 3px;
+
+}
+
+/**
+  * Select
+ */
+select {
+  height: 2rem !important;
+  outline: none;
+}
+
+/**
+  * placeholder
+ */
+input::placeholder {
+  color: var(--text-color);
+}
+
+/**
+  * border
+ */
+.borderr {
+  padding: 6px;
+  background-color: var(--element-color);
+  color: var(--text-color);
+  border-radius: 3px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/**
+  * borders
+ */
+.borders{
+  gap: 5px;
+}
+
+/**
+  * text small
+ */
+.text-sm {
+  font-size: 0.8rem;
+}
+
+/**
+  * Flag
+ */
+.flag {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/**
+  * Text
+ */
+p {
+  font-size: 14px
+}
+
+/**
+  * Truncate
+ */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+
+/**
+  * media para 1440px
+ */
+@media (min-width: 1440px) {
+  .navbar .title {
+    font-size: 1.5rem;
+  }
+
+  .navbar .form-check {
+    font-size: 1.2rem;
+  }
+
+  .borders {
+    flex-direction: row;
+  }
+
+  .borderr {
+    margin-right: 10px;
+  }
+
+  .row.align-items-center {
+    margin-left: 5rem !important;
+    justify-content: flex-start;
+  }
+
+  .ml-md-5 {
+    margin-left: 5rem !important;
+  }
+}
+
+/**
+  * media para 768px
+ */
+@media (max-width: 768px) {
+  .col-lg-3.col-md-4.col-sm-12.order-1.order-sm-1.d-flex.input.ml-4 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+}
+
+

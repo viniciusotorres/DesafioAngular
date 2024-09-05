@@ -1,0 +1,45 @@
+<!-- DIV PAI -->
+<div class="container-fluid">
+
+  <!-- HEADER DO BUSCAR E FILTRAR-->
+  <div class="d-flex flex-column flex-sm-row justify-content-between col-12 ">
+
+    <!-- BUSCAR -->
+    <div class="mb-3  col-lg-3  col-md-4 col-sm-12 order-1 order-sm-1 d-flex input ml-4 ">
+      <i class="bi bi-search text mr-1"></i>
+      <input type="text"  class="text" placeholder="Search for a country..." (input)="onSearchTermChange($event)">
+    </div>
+
+    <!-- FILTRAR -->
+    <div class="col-lg-3 col-md-5 col-sm-2 order-2 order-sm-2 justify-content-center d-flex select">
+      <select aria-label="Filter by Region"  (change)="onRegionChange($event)">
+        <option disabled selected>Filter by Region</option>
+        <option value="Africa">Africa</option>
+        <option value="Americas">America</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- LISTA DE PAÍSES -->
+  <div class="row justify-content-center">
+    <!-- ITERANDO OS PAÍSES -->
+    @for (country of filteredCountries; track $index) {
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4 d-flex justify-content-center">
+        <div class="card cursor-pointer" (click)="navigateToCountryDetail(country.ccn3)">
+          <img [src]="country.flags.svg" alt="..." class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title
+          ">{{ country.name.common }}</h5>
+            <p class="card-text">Population: {{ country.population }}</p>
+            <p class="card-text">Region: {{ country.region }}</p>
+            <p class="card-text">Capital: {{ country.capital }}</p>
+          </div>
+        </div>
+
+      </div>
+    }
+  </div>
+</div>
